@@ -5,9 +5,7 @@ export const calenderDate = (
     year = dayjs().year() ) => {
         const firstDateOfMonth = dayjs().year(year).month(month).startOf("month");
         const LastDateOfMonth =  dayjs().year(year).month(month).endOf("month");
-
         const arrayOfDate = []
-
 
         for(let i = firstDateOfMonth.date(); i <= LastDateOfMonth.date(); i++) {
             arrayOfDate.push({
@@ -26,5 +24,5 @@ export const calenderDate = (
             })
         }
 
-        return arrayOfDate
-    }
+    return arrayOfDate
+}
