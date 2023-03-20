@@ -49,3 +49,4 @@ Challenge Front-end Engineer:
 - Tornei o filtro de (Hoje, Esta Semana, Este mês) dinâmico. Ao clicar em qualquer um deles, o calendário exibe o mês atual com a data atual;
 - Se não tiver nenhum evento ou não for o dia atual selecionado, eu definir uma mensagem para o usuário ("Não tem nenhuma movimentação para esse dia.");
 - Adicionei duas cores ao calendário (por uma questão de usabilidade/experiência) - A cor mais forte está exibindo os dias do mês atual e a cor mais clarinha exibe a do próximo mês;
+- Ao clicar no último dia do mês, ele muda o mês no select, no calendário e na descrição.
