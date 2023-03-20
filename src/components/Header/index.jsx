@@ -1,5 +1,5 @@
 import Logo from '../../assets/Logo.svg';
-import Menu from '../../assets/icons/Menu.svg';
+import Menu from '../../assets/icons/menu.svg';
 import Calendar from '../../assets/icons/calendar.svg';
 import Comment from '../../assets/icons/comment.svg';
 import File from '../../assets/icons/file.svg';
