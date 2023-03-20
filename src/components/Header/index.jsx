@@ -4,8 +4,7 @@ import Calendar from '../../assets/icons/calendar.svg';
 import Comment from '../../assets/icons/comment.svg';
 import File from '../../assets/icons/file.svg';
 import Volume from '../../assets/icons/volume.svg';
-
-import { AsideContainer, ButtonMenu, GridContainer, HeaderContainer, ListAside } from './style';
+import { AsideContainer, ButtonMenu, ContainerSection, Footer, GridContainer, HeaderContainer, ListAside } from './style';
 import { SectionCalender } from '../Section';
 
 
@@ -25,7 +24,13 @@ export function Header() {
                     <a href="#"><img src={File}/></a>
                 </ListAside>
             </AsideContainer>
-            <SectionCalender />
+            <ContainerSection>
+                <SectionCalender />
+            </ContainerSection>
+
+            <Footer>
+                <p className='descricao-footer'>Desenvolvido por <span className='destaque'>Delta Code LTDA® 2023</span></p>
+            </Footer>
         </GridContainer>
     )
 }

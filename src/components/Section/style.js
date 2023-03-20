@@ -34,3 +34,5 @@ export const HeaderProfile = styled.div `
         margin-top: .4rem;
     }
 `
+
+

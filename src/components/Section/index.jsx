@@ -16,9 +16,7 @@ export function SectionCalender () {
                     </div>
                 </HeaderProfile>
             </HeaderCalender>
-            <div>
-                <Calenderario />
-            </div>
+            <Calenderario />
         </SectionContainer>
     )
 }

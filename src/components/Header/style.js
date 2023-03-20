@@ -4,7 +4,7 @@ export const GridContainer = styled.div `
     width: 100%;
     display: grid;
     grid-template-columns: 8rem auto auto;
-    grid-template-areas: "header header header" 'menu section section';
+    grid-template-areas: "header header header" 'menu section section' 'menu footer footer';
 `
 
 export const HeaderContainer = styled.header `
@@ -34,7 +34,7 @@ export const ButtonMenu = styled.button `
 
 export const AsideContainer = styled.aside `
     grid-area: menu;
-    height: calc(100vh - 7.5rem);
+    height: 100%;
     background-color: #007D66;
 `
 
@@ -44,4 +44,25 @@ export const ListAside = styled.div `
     align-items: center;
     gap: 4.2rem;
     margin-top: 3.5rem;
+`
+
+export const ContainerSection = styled.div `
+    grid-area: "section";
+    height: calc(100vh - 10.5rem);
+`
+
+export const Footer = styled.footer `
+    height: 3rem;
+    grid-area: footer;
+    margin-left: 2rem;
+    
+    .descricao-footer {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #737B84;
+    }
+
+    .destaque {
+        font-weight: 700;
+    }
 `

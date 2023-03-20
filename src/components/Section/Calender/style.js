@@ -6,7 +6,7 @@ export const CalenderSection = styled.div `
 `
 
 export const BlocoCalender = styled.div `
-    max-width: 48rem;
+    max-width: 46rem;
     width: 100%;
     height: calc(100vh - 30rem);
     border-right: .2rem solid #F1F1F1;
@@ -15,7 +15,7 @@ export const BlocoCalender = styled.div `
 export const ContainerFilter = styled.div `
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
 
     button {
         font-weight: 600;
@@ -33,21 +33,22 @@ export const ContainerFilter = styled.div `
 `
 
 export const ContainerDate = styled.div `
-    max-width: 43rem;
+    max-width: 40rem;
     display: flex;
+    gap: 1rem;
 `
 
 export const ButtonSelectDate = styled.div `
-    width: 100%;
+    width: 60%;
 
     .name-date {
         color: #737B84;
         font-size: 14px;
-        margin: 2.9rem 0 .5rem 0;
+        margin: 2.4rem 0 .5rem 0;
     }
 
-    button {
-        width: 19.5rem;
+    .select {
+        width: 18.5rem;
         height: 4.2rem;
         padding: 1rem 1.5rem;
         border: .1rem solid #9C9EA0;
@@ -55,15 +56,15 @@ export const ButtonSelectDate = styled.div `
         background-color: transparent;
         display: flex;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
         position: relative;
-        font-size: 1.4rem;
-        font-weight: 600;
         color: #07232E;
 
-        .arrow {
-            position: absolute;
-            right: 1.3rem;
+        select {
+            width: 100%;
+            font-size: 1.4rem;
+            font-weight: 600;
+            outline: none;
         }
     }
 `
@@ -76,11 +77,11 @@ export const Calender= styled.div `
 
     .BlocoDateTitle {
         display: flex;
-        gap: 2.5rem;
+        gap: 2.2rem;
 
         h3 {
             font-size: 1.3rem;
-            padding: 1rem 1.4rem;
+            padding: 1rem 1.3rem;
             background-color: rgba(156, 158, 160, 0.12);
             border-radius: 100%;
         }
@@ -88,10 +89,10 @@ export const Calender= styled.div `
 
     .BlocoDay {
         margin-top: 2rem;
-        max-width: 40.8rem;
+        max-width: 40rem;
         display: grid;
         grid-template-columns: repeat(7, 3.7rem);
-        gap: 2.5rem;
+        gap: 2rem;
 
         p {
             color: #737B84;
@@ -118,15 +119,34 @@ export const Calender= styled.div `
             border-radius: 1rem;
         }
 
+        .day-event {
+            position: relative;
+
+            &::after, &::before {
+                content: '';
+                padding: .3rem;
+                border-radius: 100%;
+                position: absolute;
+                bottom: .3rem;
+                right: 1.4rem;
+            }
+
+            &::before {
+                right: 1.8rem;
+                background-color:  #00A385;
+            }
+
+            &::after {
+                right: .9rem;
+                background-color: #F13E5E;
+            }
+        }
+
         p:hover {
             background-color: #59C0AF;
             color: #fff;
         }
     }
-`
-
-export const CalenderDescription = styled.div `
-
 `
 
 export const HeaderDescription  = styled.div `
@@ -149,60 +169,28 @@ export const HeaderDescription  = styled.div `
     }
 `
 
-export const ReceitasContainer = styled.div `
-    margin-top: 2.2rem;
+export const DescriptionCurrentDay = styled.div `
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
 `
 
-export const CardReceita = styled.div `
-    width: 100%;
-    width: 50rem;
-    height: 6rem;
-    padding: 1rem;
-    border-radius: 4px;
+export const ContainerReceitas = styled.ul `
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
     align-items: center;
-    gap: 1.5rem;
-    background-image: linear-gradient(#0F4D6401, #0F4D6406);
-    box-shadow: .0rem .4rem .5rem .2rem rgba(224, 232, 240, 0.4);
-    position: relative;
+    margin-bottom: 1.5rem;
 
-    .icon {
-        border-radius: 100%;
-        padding: 1.5rem;
-    }
-    .icon-entrada {
-        background-image: linear-gradient(#00A3851A, #00A3850D);
-    }
-    .icon-saida {
-        background-image: linear-gradient(#F13E5E1A, #F13E5E0D)
-    }
-
-    .titulo {
+    .dia-com-eventos {
         font-size: 1.5rem;
-        color: #0F4D64;
+        padding: 0 1rem;
+        color: #737B84;
     }
 
-    .receita {
-        font-size: 1.2rem;
-        color: #909CAA;
-        margin-top: .5rem;
-    }
-
-    .valor {
-        font-size: 1.2rem;
-        font-weight: 600;
-        position: absolute;
-        right: 1.4rem;
-    }
-
-    .valor-entrada {
-        color: #00A385;
-    }
-    .valor-saida {
-        color: #F13E5E
+    .nome-evento {
+        color: #737B84;
+        font-size: 1.4rem;
     }
 `
 
@@ -236,25 +224,57 @@ export const BlocoCurrentDate = styled.div `
 
 export const ContainerDayEvents = styled.div `
     display: flex;
+    
     gap: 1.2rem;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 
     .dia-com-eventos {
         font-size: 1.5rem;
         padding: 0 1rem;
         color: #737B84;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         position: relative;
+
+        &::before, &::after {
+            content: '';
+            padding: .3rem;
+            border-radius: 100%;
+            position: absolute;
+            bottom: -1rem;
+            right: 1.4rem;
+        }
+    }
+
+    .entradas::before {
+        background-color: #00A385;
+    }
+
+    .saidas::before {
+        background-color: #F13E5E;
+    }
+
+    .duplo-evento::before {
+        right: 2rem;
+        background-color:  #00A385;
+    }
+    .duplo-evento::after {
+        right: .9rem;
+        background-color: #F13E5E;
     }
 
     .nome-evento {
         color: #737B84;
         font-size: 1.4rem;
     }
-
 `
 
+export const ContainerMoviment = styled.div `
+    margin-top: 2.5rem;
 
+    .description-moviment {
+        width: 100%;
+        font-size: 1.5rem;
+        padding: 0 1rem;
+        color: #737B84;
+    }
+`
